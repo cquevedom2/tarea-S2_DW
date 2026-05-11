@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Lumen es el asistente virtual inteligente para tu hogar. Únete a la lista de espera y sé de los primeros en vivir la experiencia de un Jarvis conversacional con IA.">
+    <title>Lumen — Tu asistente inteligente para el hogar</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="variables.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header class="site-header">
+        <div class="container header-content">
+            <a href="#inicio" class="logo">Lumen<span class="logo-dot">.</span></a>
+            <nav class="main-nav" aria-label="Navegación principal">
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#caracteristicas">Características</a></li>
+                    <li><a href="#registro">Registro</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero">
+            <div class="container hero-content">
+                <h1>Conoce a <span class="accent">Lumen</span>, tu asistente inteligente para el hogar</h1>
+                <p class="hero-description">
+                    Una IA conversacional que entiende, aprende y responde como nunca antes.
+                    Controla tu casa, organiza tu día y vive una experiencia digital sin fricciones.
+                </p>
+                <a href="#registro" class="btn btn-primary">Únete a la lista de espera</a>
+            </div>
+        </section>
+
+        <section id="caracteristicas" class="features">
+            <div class="container">
+                <h2 class="section-title">¿Qué puede hacer Lumen?</h2>
+                <p class="section-subtitle">Haz clic en cada tarjeta para ver más detalles.</p>
+
+                <div class="features-grid">
+
+                    <article class="feature-card" data-expandable>
+                        <h3>Control por voz</h3>
+                        <p class="feature-summary">
+                            Habla de forma natural y deja que Lumen ejecute tus órdenes al instante.
+                        </p>
+                        <div class="feature-details" hidden>
+                            <p>
+                                Lumen utiliza modelos avanzados de reconocimiento de voz capaces de
+                                entender múltiples idiomas, acentos y entonaciones. Funciona incluso
+                                en ambientes ruidosos y siempre respeta tu privacidad.
+                            </p>
+                        </div>
+                        <button class="btn btn-ghost btn-toggle" type="button" aria-expanded="false">
+                            Ver más
+                        </button>
+                    </article>
+
+                    <article class="feature-card" data-expandable>
+                        <h3>Integración con tu hogar</h3>
+                        <p class="feature-summary">
+                            Conecta luces, cámaras, termostatos y dispositivos inteligentes desde un solo lugar.
+                        </p>
+                        <div class="feature-details" hidden>
+                            <p>
+                                Compatible con los principales protocolos del mercado (Matter, Zigbee,
+                                Z-Wave y Wi-Fi). Crea rutinas personalizadas y automatiza tu vida con
+                                un par de palabras.
+                            </p>
+                        </div>
+                        <button class="btn btn-ghost btn-toggle" type="button" aria-expanded="false">
+                            Ver más
+                        </button>
+                    </article>
+
+                    <article class="feature-card" data-expandable>
+                        <h3>Conversaciones con IA</h3>
+                        <p class="feature-summary">
+                            Mantén charlas naturales, recibe consejos y obtén respuestas inteligentes en tiempo real.
+                        </p>
+                        <div class="feature-details" hidden>
+                            <p>
+                                Impulsado por modelos de lenguaje de última generación, Lumen recuerda
+                                el contexto de tus conversaciones, aprende de tus preferencias y se
+                                adapta a tu rutina día a día.
+                            </p>
+                        </div>
+                        <button class="btn btn-ghost btn-toggle" type="button" aria-expanded="false">
+                            Ver más
+                        </button>
+                    </article>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="registro" class="signup">
+            <div class="container signup-container">
+                <h2 class="section-title">Reserva tu Lumen</h2>
+                <p class="section-subtitle">
+                    Completa el formulario y serás de los primeros en recibir tu asistente.
+                </p>
+
+                <form id="signup-form" class="signup-form" action="#" method="POST" novalidate>
+
+                    <div class="form-group">
+                        <label for="fullname">Nombre completo</label>
+                        <input
+                            type="text"
+                            id="fullname"
+                            name="fullname"
+                            placeholder="Ej. Juan Manuelito Perez Rodriguez"
+                            required
+                            minlength="3"
+                            maxlength="60"
+                            autocomplete="name"
+                            aria-describedby="fullname-feedback"
+                        >
+                        <small id="fullname-feedback" class="error-message" data-error-for="fullname"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="email">Correo electrónico</label>
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="tucorreo@ejemplo.com"
+                            required
+                            maxlength="80"
+                            autocomplete="email"
+                            aria-describedby="email-feedback"
+                        >
+                        <small id="email-feedback" class="error-message" data-error-for="email"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password">Crea una contraseña</label>
+                        <input
+                            type="password"
+                            id="password"
+                            name="password"
+                            placeholder="Mínimo 8 caracteres"
+                            required
+                            minlength="8"
+                            maxlength="40"
+                            autocomplete="new-password"
+                            aria-describedby="password-feedback"
+                        >
+                        <small id="password-feedback" class="error-message" data-error-for="password"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="phone">Teléfono</label>
+                        <input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            placeholder="Ej. +593 99 123 4567"
+                            required
+                            pattern="\+?[0-9 ]{7,20}"
+                            maxlength="20"
+                            inputmode="tel"
+                            autocomplete="tel"
+                            aria-describedby="phone-feedback"
+                        >
+                        <small id="phone-feedback" class="error-message" data-error-for="phone"></small>
+                    </div>
+
+                    <fieldset class="form-group form-radios" aria-describedby="source-feedback">
+                        <legend>¿Cómo te enteraste de Lumen?</legend>
+                        <div class="radio-options">
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="redes-sociales">
+                                Redes sociales
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="amigos">
+                                Amigos
+                            </label>
+                            <label class="radio-label">
+                                <input type="radio" name="source" value="publicidad">
+                                Publicidad
+                            </label>
+                        </div>
+                        <small id="source-feedback" class="error-message" data-error-for="source"></small>
+                    </fieldset>
+
+                    <div class="form-group form-checkbox">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="terms" name="terms" aria-describedby="terms-feedback">
+                            Acepto los términos y condiciones de Lumen.
+                        </label>
+                        <small id="terms-feedback" class="error-message" data-error-for="terms"></small>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary btn-submit">
+                        Registrarme
+                    </button>
+                </form>
+
+                <div id="success-message" class="success-message" role="status" aria-live="polite" hidden>
+                    <h3>¡Bienvenido a Lumen!</h3>
+                    <p>Te has registrado exitosamente en la lista de espera de Lumen.</p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>&copy; 2026 Lumen. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
