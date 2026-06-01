@@ -35,6 +35,10 @@ with app.app_context():
 def index():
     return render_template('index.html')
 
+@app.route('/admin')
+def admin():
+    return render_template('admin.html')
+    
 @app.route('/api/register', methods=['POST'])
 def register():
     data = request.get_json()
