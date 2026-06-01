@@ -118,5 +118,4 @@ def export_users_csv():
     return response
 
 if __name__ == '__main__':
-    # host='0.0.0.0' es necesario para que funcione dentro de un contenedor Docker
-    app.run(host='0.0.0.0', port=5000, debug=True)
+    app.run(debug=True)
