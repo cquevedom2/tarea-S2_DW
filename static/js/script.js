@@ -166,7 +166,7 @@ document.addEventListener('DOMContentLoaded', () => {
         validateField('terms');
     });
 
-    form.addEventListener('submit', (event) => {
+    form.addEventListener('submit', async (event) => {
         event.preventDefault();
 
         const allFields = ['fullname', 'email', 'password', 'phone', 'source', 'terms'];
@@ -179,9 +179,42 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (allValid) {
-            form.hidden = true;
-            successMessage.hidden = false;
-            successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            const formData = {
+                fullname: getFieldValue('fullname'),
+                email: getFieldValue('email'),
+                password: getFieldValue('password'),
+                phone: getFieldValue('phone'),
+                source: getFieldValue('source')
+            };
+
+            const submitBtn = form.querySelector('.btn-submit');
+            const originalBtnText = submitBtn.textContent;
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+
+            try {
+                const response = await fetch('/api/register', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(formData)
+                });
+                
+                const data = await response.json();
+                
+                if (response.ok) {
+                    form.hidden = true;
+                    successMessage.hidden = false;
+                    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                } else {
+                    alert(data.error || 'Ocurrió un error en el registro.');
+                }
+            } catch (error) {
+                console.error('Error al enviar formulario:', error);
+                alert('Ocurrió un error inesperado de conexión.');
+            } finally {
+                submitBtn.textContent = originalBtnText;
+                submitBtn.disabled = false;
+            }
         }
     });
 

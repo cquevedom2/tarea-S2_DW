@@ -1,0 +1,15 @@
+version: '3.8'
+
+services:
+  lumen-backend:
+    build: .
+    container_name: lumen-app
+    ports:
+      - "5000:5000"
+    # Mapeamos la carpeta instance para que la base de datos persista si el contenedor se apaga
+    volumes:
+      - ./instance:/app/instance
+    # Leemos las variables de entorno
+    env_file:
+      - .env
+    restart: unless-stopped

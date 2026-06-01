@@ -308,3 +308,50 @@ Si te preguntan "¿qué buenas prácticas aplicaste?", aquí los puntos clave:
 18. **Mensajes de error específicos** (no genéricos).
 19. **Feedback de éxito**, no solo de error.
 20. **Prevención de entrada inválida** (filtro en vivo del teléfono) en lugar de validar después.
+
+---
+
+## 7. Guía para Desarrolladores (Cómo ejecutar el proyecto)
+
+El proyecto ahora cuenta con un Backend impulsado por **Python y Flask**. Si acabas de descargar o clonar el repositorio, sigue estos pasos para levantar el servidor localmente:
+
+### Requisitos previos
+- Python 3.10 o superior instalado en tu máquina.
+
+### Pasos de Instalación
+
+1. **Crear un entorno virtual:**
+   Abre tu terminal en la carpeta raíz del proyecto y ejecuta:
+   ```bash
+   python -m venv venv
+   ```
+
+2. **Activar el entorno virtual:**
+   - En **Windows**:
+     ```bash
+     .\venv\Scripts\activate
+     ```
+   - En **Mac/Linux**:
+     ```bash
+     source venv/bin/activate
+     ```
+
+3. **Instalar las dependencias:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Configurar Variables de Entorno:**
+   Copia el archivo de ejemplo para crear tus variables locales:
+   - Duplica el archivo `.env.example` y renómbralo a `.env`.
+   - No modifiques el `.env.example` directamente, usa tu propio `.env`.
+
+5. **Ejecutar el Servidor:**
+   ```bash
+   python app.py
+   ```
+   El servidor se levantará en `http://127.0.0.1:5000/`.
+
+**Nota para Frontends:** Las rutas de la API de administración para el panel de control son:
+- `GET /api/admin/users`: Retorna un JSON con la data.
+- `GET /api/admin/export`: Descarga automáticamente la data en CSV.
