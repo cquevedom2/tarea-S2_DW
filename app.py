@@ -122,4 +122,5 @@ def export_users_csv():
     return response
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    debug_mode = os.environ.get('FLASK_ENV', 'production') == 'development'
+    app.run(host='0.0.0.0', port=5000, debug=debug_mode)
