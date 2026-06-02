@@ -13,3 +13,6 @@ instance/
 # Archivos de caché de Python
 __pycache__/
 *.pyc
+
+# Docker
+docker-compose.override.yml
