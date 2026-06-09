@@ -4,9 +4,11 @@ services:
     ports:
       - "5000:5000"
     volumes:
+      - .:/app                    # Monta el código en tiempo real
       - db-data:/app/instance     # Persistencia de la BD SQLite
     env_file:
       - .env                      # Carga las variables de entorno
+    command: gunicorn --reload --bind 0.0.0.0:5000 app:app
     restart: unless-stopped
 
 volumes:

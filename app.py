@@ -37,8 +37,9 @@ def index():
 
 @app.route('/admin')
 def admin():
-    return render_template('admin.html')
-    
+    # return render_template('admin.html')
+    users = WaitlistEntry.query.order_by(WaitlistEntry.created_at.desc()).all()
+    return render_template('admin_fixed.html', users=users)
 @app.route('/api/register', methods=['POST'])
 def register():
     data = request.get_json()
